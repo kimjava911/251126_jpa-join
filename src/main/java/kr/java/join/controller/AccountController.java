@@ -5,6 +5,7 @@ import kr.java.join.model.entity.UserProfile;
 import kr.java.join.model.repository.UserAccountRepository;
 import kr.java.join.model.repository.UserProfileRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,8 @@ public class AccountController {
     }
 
     @GetMapping
-    public String page() {
+    public String page(Model model) {
+        model.addAttribute("accounts", accountRepository.findAll());
         return "account";
     }
 
