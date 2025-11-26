@@ -40,7 +40,7 @@ public class JPAConfig {
         // DB 설정
         emf.setDataSource(dataSource());
         // 엔터티 스캔할 패키지를 지정
-        emf.setPackagesToScan("kr.java.jpa.model.entity");
+        emf.setPackagesToScan("kr.java.join.model.entity");
         // Hibernate 구현체로 지정
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
 
@@ -55,7 +55,8 @@ public class JPAConfig {
         // MySQL 연결을 위한 세팅
         props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         // 스키마 자동 업데이트 전략
-        props.setProperty("hibernate.hbm2ddl.auto", "create");
+        // props.setProperty("hibernate.hbm2ddl.auto", "create");
+        props.setProperty("hibernate.hbm2ddl.auto", "update");
 
         // SQL 자동 포맷팅
         props.setProperty("hibernate.format_sql", "true");
