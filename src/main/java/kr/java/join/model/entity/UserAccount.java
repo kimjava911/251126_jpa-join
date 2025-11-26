@@ -32,6 +32,7 @@ public class UserAccount {
     }
 
     // 1:1 매핑
+    // Spring Boot <- 금방 세팅이 됨 / Spring
 //    @OneToOne(fetch = FetchType.LAZY) // 1:1 단방향 매핑 (FK를 가질 입장에서 작성)
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "profile_id") // FK 컬럼명
