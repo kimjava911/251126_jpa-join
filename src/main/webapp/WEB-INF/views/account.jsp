@@ -12,7 +12,12 @@
         List<UserAccount> accounts = (List<UserAccount>) request.getAttribute("accounts");
         for (UserAccount ua : accounts) {
             UserProfile up = ua.getProfile();
+            UserAccount ua2 = up.getUserAccount(); // -> 양방향 매핑 -> ua
+            UserProfile up2 = ua2.getProfile();
+            // ...
     %>
+        <%= ua %>
+        <%= up %>
         <div>
             <p> 유저네임 : <%= ua.getUsername() %> </p>
             <p> 유저별명 : <%= up.getNickname() %> </p>

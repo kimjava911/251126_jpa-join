@@ -47,4 +47,15 @@ public class UserAccount {
     public void setProfile(UserProfile profile) {
         this.profile = profile;
     }
+
+    // 객체가 String을 취급을 받을 때 어떻게 출력될 것인가
+    // -> 없으면 -> 객체 주소...
+    @Override
+    public String toString() {
+        return "UserAccount{" +
+                "accountId=" + accountId +
+                ", username='" + username + '\'' +
+                ", profile=" + profile +
+                '}';
+    }
 }
